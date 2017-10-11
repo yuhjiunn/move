@@ -1,0 +1,36 @@
+192.168.123.170.1.1
+0101
+\\Bp-sl-hv1-vm1\lyj\
+\\OCR\images2\
+\\thermo1\Object_PDF\
+\\thermo1\Alarm_PDF\
+E:\image3\
+
+net use \\Bp-sl-hv1-vm1\lyj Admin123 /USER:Administrator
+net use \\OCR\images2 123 /USER:ocr_user
+
+net use \\thermo1\Object_PDF  /USER:Thermo
+net use \\thermo1\Alarm_PDF  /USER:Thermo
+5000
+
+
+//save the move in xray pc. must link with PLC
+then read the png folder quantity, scan ON mode
+to grab from network. 
+
+
+now the theory is 
+
+while scan ON 
+	if png_folder.count =4 then 
+		wait 2000ms // for object report
+		move all the ocr, xray, rpm
+	end if
+end
+
+\\Bp-sl-hv1-vm1\lyj1\
+net use \\192.168.100.14\xampp\LYJ Admin123 /USER:Administrator
+net use \\192.168.100.83\images2 123 /USER:ocr_user
+
+net use \\192.168.100.190\Object_PDF  /USER:Thermo
+net use \\192.168.100.190\Alarm_PDF  /USER:Thermo
